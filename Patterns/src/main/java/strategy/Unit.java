@@ -1,13 +1,18 @@
 package strategy;
 
-class Unit {
-    FightingStrategy strategy;
+import lombok.AllArgsConstructor;
+import strategy.weapon.Weapon;
 
-    Unit(FightingStrategy strategy){
-        this.strategy = strategy;
+@AllArgsConstructor
+class Unit {
+    private Weapon primaryWeapon;
+    private Weapon secondaryWeapon;
+
+    void heatWithPrimaryWeapon(){
+        primaryWeapon.heat();
     }
 
-    void fight(){
-        strategy.heat();
+    void heatWithSecondaryWeapon(){
+        secondaryWeapon.heat();
     }
 }
