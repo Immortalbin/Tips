@@ -1,11 +1,17 @@
 package strategy;
 
-import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 import strategy.weapon.Weapon;
 
-@AllArgsConstructor
-class Unit {
+import static java.util.Objects.nonNull;
+
+public class Unit {
+    @Getter
+    @Setter
     private Weapon primaryWeapon;
+    @Getter
+    @Setter
     private Weapon secondaryWeapon;
 
     void heatWithPrimaryWeapon(){
@@ -13,6 +19,10 @@ class Unit {
     }
 
     void heatWithSecondaryWeapon(){
-        secondaryWeapon.heat();
+        if(nonNull(secondaryWeapon)){
+            secondaryWeapon.heat();
+        } else{
+            System.out.println("There is no secondary weapon.");
+        }
     }
 }

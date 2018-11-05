@@ -4,7 +4,7 @@ public abstract class Product {
 
     double cost;
 
-    public String getPrice() {
-        return String.valueOf(cost);
+    public double getPrice(){
+        return cost;
     }
 }
