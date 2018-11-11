@@ -5,4 +5,6 @@ public class Sword implements Weapon {
     public void heat() {
         System.out.println("Attack with a sword!");
     }
+
+
 }

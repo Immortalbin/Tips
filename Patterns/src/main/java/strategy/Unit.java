@@ -1,5 +1,6 @@
 package strategy;
 
+import factorymethod2.armor.Armor;
 import lombok.Getter;
 import lombok.Setter;
 import strategy.weapon.Weapon;
@@ -10,12 +11,21 @@ public class Unit {
     @Getter
     @Setter
     private Weapon primaryWeapon;
+
     @Getter
     @Setter
     private Weapon secondaryWeapon;
 
+    @Getter
+    @Setter
+    private Armor armor;
+
     void heatWithPrimaryWeapon(){
-        primaryWeapon.heat();
+        if(nonNull(primaryWeapon)){
+            primaryWeapon.heat();
+        } else{
+            System.out.println("There is no primary weapon.");
+        }
     }
 
     void heatWithSecondaryWeapon(){
