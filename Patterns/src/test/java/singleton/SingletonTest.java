@@ -1,3 +1,5 @@
+package singleton;
+
 import org.testng.annotations.Test;
 import singleton.MainApplicationConfig;
 
